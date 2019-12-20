@@ -1,0 +1,7 @@
+README
+setup.py
+butcher.egg-info/PKG-INFO
+butcher.egg-info/SOURCES.txt
+butcher.egg-info/dependency_links.txt
+butcher.egg-info/requires.txt
+butcher.egg-info/top_level.txt

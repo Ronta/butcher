@@ -1,0 +1,12 @@
+[Unit]
+Description=Pork butcher
+
+[Service]
+ExecStart=/home/fabio/.virtualenvs/snort/bin/python3.6 /home/fabio/PycharmProjects/u2parser/main.py
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+Type=notify
+
+
+[Install]
+WantedBy=default.target

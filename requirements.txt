@@ -1,0 +1,8 @@
+systemd==0.16.1
+idstools==0.6.3
+pandas==0.25.3
+notify2==0.3.1
+dbus-python==1.2.12
+marrow.mailer==4.0.3
+coverage==5.0
+tox==3.14.2
