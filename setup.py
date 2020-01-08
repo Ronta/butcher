@@ -18,5 +18,6 @@ setup(
         'coverage==5.0',
         'tox==3.14.2',
         'dbus-python==1.2.12',
+        'pydbus==0.6.0',
     ],
 )
