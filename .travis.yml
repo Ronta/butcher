@@ -4,7 +4,7 @@ python:
   - "3.7"
 cache: pip
 before_install:
-  - sudo apt-get -y install lib libsystemd-dev libdbus-glib-1-dev libdbus-1-dev
+  - sudo apt-get -y install libsystemd-dev libdbus-glib-1-dev libdbus-1-dev
 install:
   - pip install -r requirements.txt
 script:
