@@ -182,13 +182,6 @@ tox
 Create configuration section for choice the preferred notification method, split the config filte between 
 General section, Parser section and Notifcation section, add a loader for SO rules.
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-
 ## Authors
 
 * **Fabio Bocconi** - *Initial work* - [Ronta](https://github.com/Ronta)
