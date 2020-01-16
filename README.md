@@ -1,10 +1,12 @@
 # Butcher
 
-Butcher is a snort log parser and notifier. Actually can read CSV and unified2 logs. 
+Butcher is a snort log parser and notifier. Able to read CSV and unified2 logs. 
+
+[![Build Status](https://travis-ci.com/Ronta/butcher.svg?branch=master)](https://travis-ci.com/Ronta/butcher)
 
 ## Getting Started
 
-Install snort and configure the output to CSV or in unfield2. Then locate the folders.
+Install snort and configure the output to CSV or unfield2. Then locate the folders.
 
 ### Prerequisites
 
@@ -46,7 +48,7 @@ sudo chown YOURUSER /etc/butcher/
 
 Locate the snort csv log folder or unifield2 log folder and create the configuration file in the folder 
 
-(feel fre to use nano :joy:	)
+(feel free to use nano :joy:	)
 
 ```
 cd /etc/butcher/
@@ -71,7 +73,7 @@ path=/home/YOURUSER/snort/files/report
 path=/home/YOURUSER/snort/files/rules
 
 [csv]
-path=/home/YOURUSER/snort/files/snort_log/csv_files/alert .csv
+path=/home/YOURUSER/snort/files/snort_log/csv_files/alertandare.csv
 
 [unified2]
 path=/home/YOURUSER/snort/files/snort_log/u2_files
@@ -85,7 +87,7 @@ password=example
 username=fabio.bocconi@example.com
 port=587
 tls=required
-author=fabio.bocconi@gmail.com
+author=fabio.bocconi@example.com
 to=yourmeail@example.com, anotheremail@example.com
 ```
 
