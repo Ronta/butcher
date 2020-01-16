@@ -6,6 +6,7 @@ from os import path
 
 from ButcherExceptions import MissingConfigurationFileError, MissingRulesPathError, MissingConfigurationSectionError
 from parsers.csv_source.parser import CsvParser
+from parsers.u2_source.parser import U2Parser
 from utils import fieldnames, warning_levels, notification_methods, email_parameters
 
 
@@ -24,7 +25,6 @@ class BaseConfig(object):
 
     def __init__(self, path):
         self._path = path
-
         self._check_config_path()
         self._load_config()
         self._load_general_configuration()
@@ -95,6 +95,21 @@ class BaseConfig(object):
 
         self.parser = CsvParser(path=csv_path, rules_path=self.rules_path, warning_lvl=self.warning_lvl,
                                 report_path=self.report_path)
+
+    def _check_unified2_data(self):
+        try:
+            unified2_path = self._config['unified2']['path']
+        except KeyError:
+            raise MissingConfigurationSectionError("Missing unified2 section")
+
+        if not path.exists(unified2_path):
+            raise MissingConfigurationFileError(f"The unified2 path {unified2_path} is wrong")
+
+        if self.rules_path is None:
+            raise MissingRulesPathError("The rules path is missing")
+
+        self.parser = U2Parser(path=unified2_path, rules_path=self.rules_path, warning_lvl=self.warning_lvl,
+                               report_path=self.report_path)
 
     def _check_data_source_configuration(self):
         getattr(self, f"_check_{self.data_source}_data")()

@@ -1,7 +1,5 @@
 #Source https://github.com/torfsen/python-systemd-tutorial
 
-#lib libsystemd-dev libdbus-glib-1-dev libdbus-1-dev
-
 import logging
 import time
 import argparse
@@ -18,7 +16,7 @@ if __name__ == '__main__':
         '--config',
         nargs='*',
         type=str,
-        default='/etc/pork_butcher/butcher.ini',
+        default='/etc/butcher/butcher.ini',
         help='The telemetry you want to get: orders, hides, oee. Blank means all')
     config_file = parser.parse_args().config
     logger.addHandler(journald_handler)

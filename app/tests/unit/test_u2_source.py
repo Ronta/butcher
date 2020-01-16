@@ -3,10 +3,10 @@ import csv
 import os
 
 from utils import fieldnames
-from parsers.csv_source.parser import CsvParser
+from parsers.u2_source.parser import U2Parser
 
 
-class CSVParserTestCase(unittest.TestCase):
+class U2ParserTestCase(unittest.TestCase):
 
     def setUp(self):
         self.report_path = "app/fixtures/report"
@@ -18,11 +18,11 @@ class CSVParserTestCase(unittest.TestCase):
             writer.writeheader()
             csv_report.close()
 
-    def test_csv_parser(self):
-        obj = CsvParser(warning_lvl="low", report_path="app/fixtures/report",
-                        path="app/fixtures/snort_log/alert.csv",
-                        rules_path="app/fixtures/rules"
-                    )
+    def test_u2_parser(self):
+        obj = U2Parser(warning_lvl="low", report_path="app/fixtures/report",
+                       path="app/fixtures/u2",
+                       rules_path="app/fixtures/rules"
+                       )
         obj.start()
 
 
